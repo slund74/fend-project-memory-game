@@ -9,12 +9,15 @@ const starRating = document.querySelector(".stars");
 const playAgain = document.getElementById("playAgain");
 const modal = document.getElementById("myModal");
 const scoreLine = document.getElementById("scoreLine");
+const displayTimer = document.querySelector(".timer");
 
 // Define Variables
 let numberOfMoves = 0;
 let numberOfMatches = 0;
 let openCards = [];
 let numberOfStars = 3;
+let gameTimer = 0;
+let end = false;
 
 /*
  * Display the cards on the page
@@ -22,6 +25,15 @@ let numberOfStars = 3;
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+function advanceTimer() {
+	if (!end){
+	gameTimer+=1;
+	displayTimer.textContent = gameTimer;
+	setTimeout("advanceTimer()",1000)
+	}
+};
+advanceTimer()
 
 let shuffledDeck = shuffle(cardArray);
 
@@ -48,8 +60,6 @@ for (let i = 0; i <= 15; i++) {
 	    cardList.appendChild(lineItem);
 	}
 
-// Start the timer
- let startingTime = Date.now();
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -123,10 +133,8 @@ function moves (){
 
 // Display the model
 function endGame () {
-	let endTime = Date.now();
-	time = Math.floor((endTime - startingTime)/1000);
-	scoreLine.innerText = "You won in " + time + " seconds, with " + numberOfStars + " stars!";
-	console.log(time);
+	end = true;
+	scoreLine.innerText = "You won in " + gameTimer + " seconds, with " + numberOfStars + " stars!";
 	modal.style.display = "block";
 }
 
