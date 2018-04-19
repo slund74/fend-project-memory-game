@@ -63,7 +63,7 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-        transition: all 0.3s;
+    transition: all 0.3s;
     -webkit-transition: all 0.6s;
     -moz-transition: all 0.6s;
 }
@@ -112,6 +112,53 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+
+
+button {
+    font-family: 'Open Sans', sans-serif;
+    border:none;
+    outline: none;
+    background: none;
+    text-transform: uppercase;
+    height:100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+}
+
+button:hover {
+    color: white;
+    background-color: steelblue;
 }
 
 
